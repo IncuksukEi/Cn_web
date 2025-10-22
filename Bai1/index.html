@@ -40,6 +40,7 @@
 
             <form id="addProductForm" class="hidden">
                 <h3>Thêm sản phẩm mới</h3>
+
                 <p id="errorMsg" style="color:red;"></p>
 
                 <div>
@@ -54,10 +55,16 @@
                     <label for="newProductDesc">Mô tả:</label>
                     <textarea id="newProductDesc" rows="3"></textarea>
                 </div>
+                <div>
+                    <label for="newProductImage">Link ảnh (tùy chọn):</label>
+                    <input type="text" id="newProductImage" placeholder="https://...">
+                </div>
 
                 <button type="submit">Thêm</button>
                 <button type="button" id="cancelBtn">Hủy</button>
             </form>
+
+
             <div id="product-list">
 
                 <article class="product-item">
