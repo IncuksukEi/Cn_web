@@ -1,0 +1,229 @@
+/* --- 1. Cài đặt chung & Reset [cite: 46] --- */
+* {
+    /* Đảm bảo padding và border không làm thay đổi kích thước box */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Đặt font chữ chung [cite: 47] */
+    line-height: 1.6;
+    /* Đặt chiều cao dòng [cite: 47] */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    /* Thêm màu nền cho trang [cite: 46] */
+}
+
+/* --- 2. Styling Header và Nav (Menu) [cite: 48] --- */
+header {
+    background: #333;
+    /* Đặt nền tối cho header [cite: 49] */
+    color: #fff;
+    /* Chữ trắng [cite: 49] */
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    background: #444;
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style: none;
+    /* Bỏ dấu chấm của list [cite: 51] */
+
+    /* Sử dụng Flexbox để tạo menu ngang [cite: 50] */
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+    /* Thêm khoảng cách giữa các mục menu [cite: 52] */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #55aaff;
+}
+
+/* --- 3. Styling Phần Main (Nội dung chính) --- */
+main {
+    /* Đặt chiều rộng tối đa và căn giữa nội dung */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- 4. Danh sách sản phẩm (Layout Flexbox) [cite: 53] --- */
+#product-list {
+    display: flex;
+    /* [cite: 55, 59] */
+    flex-wrap: wrap;
+    /* [cite: 60] */
+    gap: 20px;
+    /* Khoảng cách giữa các sản phẩm [cite: 61] */
+}
+
+.product-item {
+    /* Mỗi sản phẩm chiếm ~30%, co giãn linh hoạt [cite: 63] */
+    flex: 1 1 calc(33.333% - 14px);
+
+    border: 1px solid #ccc;
+    /* [cite: 65] */
+    padding: 15px;
+    /* [cite: 66] */
+    border-radius: 5px;
+    /* [cite: 67] */
+    background: #fafafa;
+    /* [cite: 68] */
+
+    /* Thêm 2 dòng này để các box cao bằng nhau */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item img {
+    max-width: 100%;
+    /* Đảm bảo ảnh không tràn [cite: 96] */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #0056b3;
+    /* Định dạng tên sản phẩm [cite: 70] */
+}
+
+.product-price {
+    font-weight: bold;
+    color: #d9534f;
+    /* Làm nổi bật giá [cite: 71] */
+    margin-top: auto;
+    /* Đẩy giá xuống cuối article */
+}
+
+/* --- 5. Styling Form và Footer [cite: 72] --- */
+#contact-form {
+    max-width: 600px;
+    /* [cite: 73] */
+    margin: 0 auto;
+    /* Căn giữa form [cite: 73] */
+}
+
+#contact-form div {
+    margin-bottom: 15px;
+    /* Khoảng cách giữa các trường [cite: 75] */
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    /* Thêm đệm cho ô nhập liệu [cite: 75] */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact-form button {
+    background: #007bff;
+    /* Màu nền nổi bật [cite: 76] */
+    color: white;
+    /* Chữ trắng [cite: 76] */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    /* Bo tròn góc [cite: 76] */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#contact-form button:hover {
+    background: #0056b3;
+    /* Hiệu ứng hover [cite: 77] */
+}
+
+footer {
+    text-align: center;
+    /* Căn giữa nội dung footer [cite: 78] */
+    padding: 20px 0;
+    /* [cite: 79] */
+    margin-top: 20px;
+    background: #333;
+    /* Nền sẫm màu [cite: 79] */
+    color: #aaa;
+    /* Chữ màu xám [cite: 78] */
+}
+
+/* --- 6. Thiết kế Responsive (Media Query) [cite: 80] --- */
+@media (max-width: 768px) {
+
+    /* Cho màn hình tablet - 2 cột */
+    .product-item {
+        /* 50% - (gap/2) */
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    /* [cite: 82] */
+    /* Cho màn hình điện thoại - 1 cột */
+
+    nav ul {
+        flex-direction: column;
+        /* Chuyển menu thành dọc [cite: 90] */
+    }
+
+    nav ul li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    #product-list {
+        flex-direction: column;
+        /* Xếp sản phẩm thành 1 cột [cite: 84] */
+    }
+
+    /* .product-item tự động chiếm 100% [cite: 87] */
+}
