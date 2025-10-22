@@ -226,4 +226,94 @@ footer {
     }
 
     /* .product-item tự động chiếm 100% [cite: 87] */
+    
+}
+.hidden {
+    display: none;
+}
+
+/* Định dạng thanh controls (tìm kiếm, thêm SP) */
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.controls-container input[type="text"] {
+    flex-grow: 1;
+    /* Cho ô tìm kiếm chiếm nhiều không gian */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.controls-container button {
+    background: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls-container button#searchBtn {
+    background: #007bff;
+}
+
+.controls-container button:hover {
+    opacity: 0.8;
+}
+
+/* Định dạng form thêm sản phẩm (tương tự form liên hệ) */
+#addProductForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addProductForm div {
+    margin-bottom: 15px;
+}
+
+#addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addProductForm input[type="text"],
+#addProductForm input[type="number"],
+#addProductForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Nút trong form thêm sản phẩm */
+#addProductForm button[type="submit"] {
+    background: #5cb85c;
+    color: white;
+}
+
+#addProductForm button#cancelBtn {
+    background: #f0ad4e;
+    color: white;
+    margin-left: 10px;
+}
+
+#addProductForm button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
